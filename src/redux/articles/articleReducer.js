@@ -5,6 +5,12 @@ const INITIAL_STATE = {
 function articleReducer( state = INITIAL_STATE, action)
 {
     switch(action.type){
+        case "ADDARTICLE":
+            const newArr = [...state.articles];
+            newArr.unshift(action.payload)
+            return {
+                articles: newArr
+            }
         case "LOADARTICLES": {
             return {
                 ...state,
